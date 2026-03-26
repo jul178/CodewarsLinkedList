@@ -1,0 +1,12 @@
+class Node(object):
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def remove_duplicates(head):
+    probe = head
+    while probe is not None:
+        while probe.next is not None and probe.next.data == probe.data:
+            probe.next = probe.next.next
+        probe = probe.next
+    return head
